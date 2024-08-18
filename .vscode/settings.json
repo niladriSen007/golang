@@ -18,5 +18,10 @@
     "titleBar.inactiveBackground": "#430c7b99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#430c7b"
+  "peacock.color": "#430c7b",
+  "cSpell.words": [
+    "fileops",
+    "Pallinder",
+    "randomdata"
+  ]
 }
