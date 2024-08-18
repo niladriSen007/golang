@@ -35,12 +35,12 @@ func ReadFile() (float64, error) {
 	data, err := os.ReadFile(filename)
 
 	if err != nil {
-		err = errors.New("Error reading the file")
+		err = errors.New("error reading the file")
 		return 1000, err
 	}
 
 	/* fmt.Println("Data read from the file:", string(data)) */
-	fmt.Printf("Data read from the file: %s", data)
+	fmt.Printf("Data read from the file: %s \n", data)
 
 	return 0, nil
 }
