@@ -1,55 +1,27 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
-type Person struct {
-	username  string
-	age       int
-	email     string
-	createdAt time.Time
-}
-
-func printPerson(p Person) {
-	fmt.Println("Name: ", p.username)
-	fmt.Println("Age: ", p.age)
-	fmt.Println("Email: ", p.email)
-	fmt.Println("Created At: ", p.createdAt)
-}
-
-func printPersonByPointer(p *Person) {
-	fmt.Println("Printing Person by Pointer")
-	fmt.Println("Name: ", p.username)
-	fmt.Println("Age: ", p.age)
-	fmt.Println("Email: ", p.email)
-	fmt.Println("Created At: ", p.createdAt)
-}
-
-// This is a method of the Person struct
-func (p Person) printPerson() {
-	fmt.Println("Name: ", p.username)
-	fmt.Println("Age: ", p.age)
-	fmt.Println("Email: ", p.email)
-	fmt.Println("Created At: ", p.createdAt)
-}
-
-// This is a method of the Person struct
-func (p *Person) printPersonActual() {
-	fmt.Println("Name: ", p.username)
-	fmt.Println("Age: ", p.age)
-	fmt.Println("Email: ", p.email)
-	fmt.Println("Created At: ", p.createdAt)
-}
-
-func (p *Person) clearUsername() {
-	p.username = ""
-}
+import "example.com/structs/personpointer"
 
 func main() {
 
-	p1 := Person{"John", 25, "john@emp.com", time.Now()}
+	//Creating a Person object by passing values in the order of the struct fields
+	/* var p1 Person */
+	/* p1 := Person{"John", 25, "john@emp.com", time.Now()} */
+
+	/* p1.printPersonActual()
+	p1.clearUsername()
+	p1.printPersonActual() */
+
+	/* var personPointer *Person */
+	personPointer, err := personpointer.NewPerson("John", 25, "john@emp.com")
+
+	if err != nil {
+		panic(err)
+	}
+
+	personPointer.PrintPersonActual()
+	personPointer.ClearUsername()
+	personPointer.PrintPersonActual()
 
 	/* printPerson(p1) */
 
@@ -57,7 +29,4 @@ func main() {
 
 	/* p1.printPerson() */
 
-	p1.printPersonActual()
-	p1.clearUsername()
-	p1.printPersonActual()
 }
