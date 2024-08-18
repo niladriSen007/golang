@@ -6,5 +6,5 @@ func main() {
 	/* const myAge = 24 */
 	/* writeIntoFile(myAge) */
 	fileops.CreateFile()
-	fileops.ReadFile()  
+	fileops.ReadFile()
 }
